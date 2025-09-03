@@ -1,3 +1,4 @@
+import math
 print ("Welcome to the Temperature Converster")
 unit_from = 0
 def input_type ():
@@ -58,7 +59,7 @@ def output_type (unit_from):
 unit_too = output_type(unit_from)
 starttemp = 0
 endtemp = 0
-def selector ():
+def selector (unit_from, unit_too):
     if unit_from == "1" and unit_too == "2":
         c_to_f()
         pass
@@ -78,15 +79,47 @@ def selector ():
         k_to_f()
         pass
     pass
+def ender ():
+    again = input ("Would you like to convert again? (Y or N) ")
+    if again == "Y":
+        unit_from = input_type()
+        unit_too = output_type()
+        selector (unit_from, unit_too)
+    elif again == "N":
+        print ("Bye Bye")
+        pass
+    else:
+        print ("Invalid input recognized")
+        ender ()
 def c_to_f ():
-    starttemp = input("""Please type your temperature in celsius (no units) """
+    starttemp = input("""Please type your temperature in Celsius (no units) """)
+    endtemp = starttemp * 9/5 + 32
+    if endtemp.isdigit == True
+    print (f"Your temperature in Fahrenheit is {endtemp} degrees")
+    ender()
 def c_to_k ():
-    pass
+    starttemp = input("""Please type your temperature in Celsius (no units) """)
+    endtemp = starttemp + 273.15
+    print (f"Your temperature in Kelvin is {endtemp} degrees")
+    ender()
 def f_to_c ():
-    pass
+    starttemp = input("""Please type your temperature in Fahrenheit (no units) """)
+    endtemp = (starttemp - 32) * 5/9
+    print (f"Your temperature in Celsius is {endtemp} degrees")
+    ender()
 def f_to_k ():
-    pass
+    starttemp = input("""Please type your temperature in Fahrenheit (no units) """)
+    endtemp = (starttemp -32) * 5/9 + 273.15
+    print (f"Your temperature in Kelvin is {endtemp} degrees")
+    ender()
 def k_to_c ():
-    pass
+    starttemp = input("""Please type your temperature in Kelvin (no units) """)
+    endtemp = starttemp - 273.15
+    print (f"Your temperature in Celsius is {endtemp} degrees")
+    ender()
 def k_to_f ():
-    pass
+    starttemp = input("""Please type your temperature in Kelvin (no units) """)
+    endtemp = (starttemp - 273.15) * 9/5 + 32
+    print (f"Your temperature in Fahrenheit is {endtemp} degrees")
+    ender()
+selector (unit_from, unit_too)
