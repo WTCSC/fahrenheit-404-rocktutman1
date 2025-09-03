@@ -56,9 +56,30 @@ def output_type (unit_from):
     else:
         print ("This text should never be displayed")
 unit_too = output_type(unit_from)
-
-def c_to_f ():
+starttemp = 0
+endtemp = 0
+def selector ():
+    if unit_from == "1" and unit_too == "2":
+        c_to_f()
+        pass
+    if unit_from == "1" and unit_too == "3":
+        c_to_k()
+        pass
+    if unit_from == "2" and unit_too == "1":
+        f_to_c()
+        pass
+    if unit_from == "2" and unit_too == "3":
+        f_to_k()
+        pass
+    if unit_from == "3" and unit_too == "1":
+        k_to_c()
+        pass
+    if unit_from == "3" and unit_too == "2":
+        k_to_f()
+        pass
     pass
+def c_to_f ():
+    starttemp = input("""Please type your temperature in celsius (no units) """
 def c_to_k ():
     pass
 def f_to_c ():
