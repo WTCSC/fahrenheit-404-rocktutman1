@@ -83,7 +83,7 @@ def ender ():
     again = input ("Would you like to convert again? (Y or N) ")
     if again == "Y":
         unit_from = input_type()
-        unit_too = output_type()
+        unit_too = output_type(unit_from)
         selector (unit_from, unit_too)
     elif again == "N":
         print ("Bye Bye")
