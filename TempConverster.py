@@ -91,9 +91,15 @@ def ender ():
     else:
         print ("Invalid input recognized")
         ender ()
+def float_test (starttemp):
+    try:
+        float(starttemp)
+        return True
+    except ValueError: 
+        return False
 def c_to_f ():
-    starttemp = input("""Please type your temperature in Celsius (no units or decimals) """)
-    if starttemp.isdigit():
+    starttemp = input("""Please type your temperature in Celsius (no units) """)
+    if float_test(starttemp):
         starttemp = float(starttemp)
         endtemp = starttemp * 9/5 + 32
         print (f"Your temperature in Fahrenheit is {round(endtemp,2)} degrees")
@@ -102,8 +108,8 @@ def c_to_f ():
         print ("Invalid Input, please try again")
         c_to_f()
 def c_to_k ():
-    starttemp = input("""Please type your temperature in Celsius (no units or decimals) """)
-    if starttemp.isdigit():
+    starttemp = input("""Please type your temperature in Celsius (no units) """)
+    if float_test(starttemp):
         starttemp = float(starttemp)
         endtemp = starttemp + 273.15
         print (f"Your temperature in Kelvin is {round(endtemp,2)} degrees")
@@ -112,8 +118,8 @@ def c_to_k ():
         print ("Invalid Input, please try again")
         c_to_k()
 def f_to_c ():
-    starttemp = input("""Please type your temperature in Fahrenheit (no units or decimals) """)
-    if starttemp.isdigit():
+    starttemp = input("""Please type your temperature in Fahrenheit (no units) """)
+    if float_test(starttemp):
         starttemp = float(starttemp)
         endtemp = (starttemp - 32) * 5/9
         print (f"Your temperature in Celsius is {round(endtemp,2)} degrees")
@@ -122,8 +128,8 @@ def f_to_c ():
         print ("Invalid Input, please try again")
         f_to_c()
 def f_to_k ():
-    starttemp = input("""Please type your temperature in Fahrenheit (no units or decimals) """)
-    if starttemp.isdigit():
+    starttemp = input("""Please type your temperature in Fahrenheit (no units) """)
+    if float_test(starttemp):
         starttemp = float(starttemp)
         endtemp = (starttemp -32) * 5/9 + 273.15
         print (f"Your temperature in Kelvin is {round(endtemp,2)} degrees")
@@ -132,8 +138,8 @@ def f_to_k ():
         print ("Invalid Input, please try again")
         f_to_k()
 def k_to_c ():
-    starttemp = input("""Please type your temperature in Kelvin (no units or decimals) """)
-    if starttemp.isdigit():
+    starttemp = input("""Please type your temperature in Kelvin (no units) """)
+    if float_test(starttemp):
         starttemp = float(starttemp)    
         endtemp = starttemp - 273.15
         print (f"Your temperature in Celsius is {round(endtemp,2)} degrees")
@@ -142,8 +148,8 @@ def k_to_c ():
         print ("Invalid Input, please try again")
         k_to_c()
 def k_to_f ():
-    starttemp = input("""Please type your temperature in Kelvin (no units or decimals) """)
-    if starttemp.isdigit():
+    starttemp = input("""Please type your temperature in Kelvin (no units) """)
+    if float_test(starttemp):
         starttemp = float(starttemp)
         endtemp = (starttemp - 273.15) * 9/5 + 32
         print (f"Your temperature in Fahrenheit is {round(endtemp,2)} degrees")
